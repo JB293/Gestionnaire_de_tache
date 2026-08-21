@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             GestionnaireDeTachesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GestionnairedeTacheImg(
+                    TaskManagerImg(
                         titre = stringResource(R.string.all_tasks_text),
                         sousTitre = stringResource(R.string.nice_text),
                         modifier = Modifier.padding(innerPadding)
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GestionnairedeTache(titre: String, sousTitre: String, modifier: Modifier = Modifier) {
+fun TaskManager(titre: String, sousTitre: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -63,7 +63,7 @@ fun GestionnairedeTache(titre: String, sousTitre: String, modifier: Modifier = M
 }
 
 @Composable
-fun GestionnairedeTacheImg(titre: String, sousTitre: String, modifier: Modifier = Modifier) {
+fun TaskManagerImg(titre: String, sousTitre: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.ic_task_completed)
     Box(
         modifier = modifier.fillMaxSize(),
@@ -76,7 +76,7 @@ fun GestionnairedeTacheImg(titre: String, sousTitre: String, modifier: Modifier 
                 painter = image,
                 contentDescription = null
             )
-            GestionnairedeTache(
+            TaskManager(
                 titre = titre,
                 sousTitre = sousTitre
             )
@@ -88,7 +88,7 @@ fun GestionnairedeTacheImg(titre: String, sousTitre: String, modifier: Modifier 
 @Composable
 fun GreetingPreview() {
     GestionnaireDeTachesTheme {
-        GestionnairedeTacheImg(
+        TaskManagerImg(
             titre = stringResource(R.string.all_tasks_text),
             sousTitre = stringResource(R.string.nice_text)
         )
